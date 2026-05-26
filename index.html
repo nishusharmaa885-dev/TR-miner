@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trewards Web</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Warning Screen -->
+    <div id="warning-screen" class="screen active">
+        <div class="warning-container">
+            <div class="icon-warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h1>IMPORTANT WARNING</h1>
+            <div class="warning-box">
+                <p>🚫 Using this script may result in your Telegram account being <strong>PERMANENTLY BANNED</strong>.</p>
+                <p>⚠️ This tool is for educational purposes only. The developer is NOT responsible for any account bans, losses, or damages.</p>
+                <p>📌 By clicking RUN SCRIPT you agree that you are using this at your own risk.</p>
+                <p>🛑 We strongly recommend NOT using this script on your primary Telegram account.</p>
+            </div>
+            <button id="btn-run-script" class="btn btn-danger">🔴 RUN SCRIPT</button>
+            <div class="developer-info">Developer: Nishu Sharma</div>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen">
+        <div class="login-container">
+            <h1 class="brand-title"><i class="fa-solid fa-robot"></i> Trewards</h1>
+            <p class="subtitle">Auto Ad Watcher (Web Version)</p>
+
+            <div class="form-group" id="phone-group">
+                <input type="text" id="phone-input" placeholder="Phone Number (+1234567890)">
+                <button id="btn-send-code" class="btn btn-primary">Send Code</button>
+            </div>
+
+            <div class="form-group hidden" id="code-group">
+                <input type="text" id="code-input" placeholder="Enter OTP Code">
+                <button id="btn-verify-code" class="btn btn-success">Verify Code</button>
+            </div>
+
+            <p id="login-status" class="status-message"></p>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard-screen" class="screen">
+        <header class="dashboard-header">
+            <div class="header-left">Trewards Web</div>
+            <div class="header-right">
+                <span id="global-balance" class="badge-success">💰 Total: 0</span>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-box">
+                    <span class="stat-label">Connected</span>
+                    <span class="stat-value" id="total-accounts-count">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Ads Run</span>
+                    <span class="stat-value" id="total-ads-count">0</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-row">
+                <button id="btn-add-account" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> Add Account</button>
+            </div>
+
+            <!-- Social Buttons -->
+            <div class="social-row">
+                <a href="https://t.me/javagoat" target="_blank" class="btn btn-tg"><i class="fa-brands fa-telegram"></i> Join Telegram</a>
+                <a href="https://youtube.com/@javagoat9?si=3bvKvcd64fs_LKul" target="_blank" class="btn btn-yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+
+            <!-- Developer Info -->
+            <div class="developer-info">Developer: Nishu Sharma</div>
+
+            <!-- Accounts List -->
+            <div class="section-title">Active Accounts</div>
+            <div class="accounts-list" id="accounts-container">
+                <!-- Account items injected via JS -->
+            </div>
+
+            <!-- Live Logs -->
+            <div class="section-title">🔥 Live Logs</div>
+            <div class="logs-container" id="logs-container">
+                <!-- Logs injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Multi-Account Login -->
+    <div id="multi-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Add New Account</h2>
+            
+            <div class="form-group" id="m-phone-group">
+                <input type="text" id="m-phone-input" placeholder="Phone Number">
+                <button id="m-btn-send-code" class="btn btn-primary">Send Code</button>
+            </div>
+
+            <div class="form-group hidden" id="m-code-group">
+                <input type="text" id="m-code-input" placeholder="Enter OTP Code">
+                <button id="m-btn-verify-code" class="btn btn-success">Verify Code</button>
+            </div>
+
+            <p id="m-status" class="status-message"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
